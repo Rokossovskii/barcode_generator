@@ -37,14 +37,11 @@ def calculate_last_number(input_string:str) -> str:
         for index,char in enumerate(input_string):
             if(index%2 == 0):
                 sum += int(char) * 3
-                print(char,3)
             else:
                 sum += int(char)
-                print(char, 1)
     except:
         print('not all deimal')
         return
-    print(sum)
     sum = 10 - (sum%10)
     if(sum == 10): sum = 0
 
@@ -53,13 +50,9 @@ def calculate_last_number(input_string:str) -> str:
 def encoding_barecode(input_string:str) -> str:
     first_num = int(input_string[0])
     ouptut_code = outside_boundieries_guard
-    print(outside_boundieries_guard)
     for index,(num,key) in enumerate(zip(input_string[1:],encoding_table[first_num])):
         if(index == 6): 
             ouptut_code += middle_guard
-            print(middle_guard)
         ouptut_code += barcode_encoding_dic.get(key)[int(num)]
-        print(barcode_encoding_dic.get(key)[int(num)])
     ouptut_code += outside_boundieries_guard
-    print(outside_boundieries_guard)
     return ouptut_code

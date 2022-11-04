@@ -1,5 +1,3 @@
-# importing image object from PIL
-import math
 from PIL import Image, ImageDraw
 
 def drawing_barcode(bin_barcode):
@@ -9,11 +7,11 @@ def drawing_barcode(bin_barcode):
 
     for x,bin_num in enumerate(bin_barcode):
         shape = [(40+x*b_width, 40), (40+x*b_width, width - 40)]
-        print(x, bin_num)
         line = ImageDraw.Draw(barcode)
         if(bin_num == '1'):
             line.line(shape, "black", width = b_width)
         else:
             line.line(shape, "white", width = b_width)
         
-    barcode.show()
+    barcode.save("barcode.png")
+
