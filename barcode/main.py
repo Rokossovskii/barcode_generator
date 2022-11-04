@@ -11,10 +11,10 @@ def main():
     bin_barcode = encoding_barecode(dec_barcode)
 
     print(dec_barcode)
-    print(bin_barcode)
-    print(len(bin_barcode))
     
     drawing_barcode(bin_barcode)
 
 if(__name__ == '__main__'):
     main()
+
+#772434561006
