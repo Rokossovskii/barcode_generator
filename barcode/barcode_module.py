@@ -12,14 +12,14 @@ middle_guard = '01010'
 outside_boundieries_guard = '101'
 
 def write_encoding_data():
-    with open('./barcode/barcode_encoding_data.txt') as file:
+    with open('barcode_encoding_data.txt') as file:
         for line in file:
             line = line.split(' ')
             barcode_encoding_dic.get('A').append(line[1])
             barcode_encoding_dic.get('B').append(line[2])
             barcode_encoding_dic.get('C').append(line[3])
 
-    with open('./barcode/barcode_how_to_encode_data.txt') as file:
+    with open('barcode_how_to_encode_data.txt') as file:
         for line in file:
             line = line.strip('\n').split('\t')
             encoding_table.append(line)
